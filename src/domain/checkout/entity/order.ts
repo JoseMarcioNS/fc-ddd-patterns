@@ -46,4 +46,10 @@ export default class Order {
   total(): number {
     return this._items.reduce((acc, item) => acc + item.price, 0);
   }
+  removeItemById(id:string): void{
+     this._items.forEach((value,index)=>{
+      if(value.id==id) 
+      this._items.splice(index,1);
+  });
+  }
 }
